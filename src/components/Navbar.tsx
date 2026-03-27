@@ -6,7 +6,6 @@ const navLinks = [
   { label: "Services", href: "#services" },
   { label: "Work", href: "#work" },
   { label: "Achievements", href: "#achievements" },
-  { label: "Classroom", href: "https://classroom.eliteforums.in", external: true },
   { label: "Contact", href: "#contact" },
 ];
 
