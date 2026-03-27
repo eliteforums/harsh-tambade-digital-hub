@@ -65,7 +65,8 @@ const HeroSection = () => {
               Book a Consultation <ArrowRight size={14} />
             </a>
             <a
-              href="mailto:harsh.tambade@eliteforums.in"
+              href="/Harsh-Tambade-Resume.pdf"
+              download="Harsh-Tambade-Resume.pdf"
               className="border border-foreground text-foreground px-6 py-3.5 text-xs uppercase tracking-wider font-semibold hover:bg-foreground hover:text-background transition-colors text-center whitespace-nowrap"
             >
               Download Resume
