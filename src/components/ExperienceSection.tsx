@@ -53,37 +53,68 @@ const experiences: ExperienceItem[] = [
         type: "Full-time",
         duration: "1 yr 1 mo",
         period: "Jun 2024 – Jun 2025",
-        skills: "Event Management, Public Relations, +5 skills",
       },
     ],
   },
   {
-    company: "A. P. Shah Institute of Technology (APSIT)",
-    location: "Thane, Maharashtra, India · On-site",
+    company: "Biz Millennium",
+    location: "Mumbai, Maharashtra, India · On-site",
     roles: [
       {
-        title: "Student Coordinator",
-        duration: "1 yr",
-        period: "Jun 2024 – Jun 2025",
-        skills: "Leadership, Event Planning, Team Management",
-      },
-    ],
-  },
-  {
-    company: "Freelance",
-    location: "Remote",
-    roles: [
-      {
-        title: "Web Developer",
-        type: "Freelance",
-        duration: "2 yrs",
-        period: "Jan 2023 – Present",
-        skills: "React, Node.js, Full Stack Development",
+        title: "Project Manager",
+        type: "Apprenticeship",
+        duration: "4 mos",
+        period: "May 2024 – Aug 2024",
       },
     ],
     description: [
-      "Developed and deployed 25+ web applications for clients across various industries.",
-      "Specialized in React, Next.js, and modern full-stack development.",
+      "Led a cross-functional team to enhance and deploy real-time AI applications.",
+      "Improved machine learning model accuracy by 20% through advanced data analysis.",
+      "Managed project timelines and coordinated between development and business teams.",
+    ],
+    topSkills: "Community Engagement, Business Operations and +19 skills",
+  },
+  {
+    company: "Empiric Media",
+    location: "Mumbai, Maharashtra, India",
+    roles: [
+      {
+        title: "Full Stack Engineer",
+        type: "Internship",
+        duration: "8 mos",
+        period: "Jun 2022 – Jan 2023",
+      },
+    ],
+    description: [
+      "Developed and maintained responsive web applications for 5+ clients.",
+      "Collaborated with design and backend teams to launch new features on schedule.",
+    ],
+    topSkills: "JavaScript, React.js and +22 skills",
+  },
+  {
+    company: "J&B Technologies, Ltd.",
+    location: "Remote",
+    roles: [
+      {
+        title: "Web Scraping And API Developer",
+        type: "Internship",
+        duration: "3 mos",
+        period: "Jun 2022 – Aug 2022",
+        skills: "Strategy, Spoken English and +2 skills",
+      },
+    ],
+  },
+  {
+    company: "KaroStartup",
+    location: "Online · Remote",
+    roles: [
+      {
+        title: "Web Developer",
+        type: "Internship",
+        duration: "3 mos",
+        period: "Jan 2022 – Mar 2022",
+        skills: "Strategy, Spoken English and +2 skills",
+      },
     ],
   },
 ];
@@ -92,7 +123,7 @@ const containerVariants = {
   hidden: { opacity: 0 },
   visible: {
     opacity: 1,
-    transition: { staggerChildren: 0.15 },
+    transition: { staggerChildren: 0.12 },
   },
 };
 
