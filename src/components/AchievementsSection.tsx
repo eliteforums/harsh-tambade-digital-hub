@@ -19,28 +19,29 @@ const community = [
 const AchievementsSection = () => {
   return (
     <section id="achievements" className="section-padding border-t border-border">
-      <div className="grid grid-cols-1 lg:grid-cols-2 gap-16">
+      <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 lg:gap-20">
         {/* Credentials */}
         <motion.div
-          initial={{ opacity: 0, y: 40 }}
+          initial={{ opacity: 0, y: 50 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          transition={{ duration: 0.6 }}
+          transition={{ duration: 0.7 }}
         >
+          <p className="text-xs uppercase tracking-[0.3em] text-muted-foreground mb-6">Credentials</p>
           <h2 className="heading-lg text-foreground mb-12">
             TRUSTED<br />CREDENTIALS<br />& RECOGNITION
           </h2>
-          <div className="space-y-4">
+          <div className="space-y-5">
             {achievements.map((item, i) => (
               <motion.div
                 key={i}
                 initial={{ opacity: 0, x: -20 }}
                 whileInView={{ opacity: 1, x: 0 }}
                 viewport={{ once: true }}
-                transition={{ duration: 0.4, delay: i * 0.08 }}
-                className="flex items-start gap-3"
+                transition={{ duration: 0.4, delay: i * 0.06 }}
+                className="flex items-start gap-4 py-2 border-b border-border/50"
               >
-                <span className="w-2 h-2 rounded-full bg-accent-brand mt-2 shrink-0" />
+                <span className="w-1.5 h-1.5 rounded-full bg-accent-brand mt-2 shrink-0" />
                 <p className="body-sm text-foreground">{item}</p>
               </motion.div>
             ))}
@@ -49,25 +50,26 @@ const AchievementsSection = () => {
 
         {/* Community */}
         <motion.div
-          initial={{ opacity: 0, y: 40 }}
+          initial={{ opacity: 0, y: 50 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          transition={{ duration: 0.6, delay: 0.2 }}
+          transition={{ duration: 0.7, delay: 0.15 }}
         >
+          <p className="text-xs uppercase tracking-[0.3em] text-muted-foreground mb-6">Community</p>
           <h2 className="heading-lg text-foreground mb-12">
             BUILDING<br />COMMUNITIES,<br />NOT JUST<br />PRODUCTS
           </h2>
-          <div className="space-y-4">
+          <div className="space-y-5">
             {community.map((item, i) => (
               <motion.div
                 key={i}
                 initial={{ opacity: 0, x: -20 }}
                 whileInView={{ opacity: 1, x: 0 }}
                 viewport={{ once: true }}
-                transition={{ duration: 0.4, delay: i * 0.08 }}
-                className="flex items-start gap-3"
+                transition={{ duration: 0.4, delay: i * 0.06 }}
+                className="flex items-start gap-4 py-2 border-b border-border/50"
               >
-                <span className="w-2 h-2 rounded-full bg-foreground mt-2 shrink-0" />
+                <span className="w-1.5 h-1.5 rounded-full bg-foreground mt-2 shrink-0" />
                 <p className="body-sm text-foreground">{item}</p>
               </motion.div>
             ))}
