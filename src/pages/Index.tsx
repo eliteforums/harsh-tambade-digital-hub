@@ -1,12 +1,21 @@
+import { lazy, Suspense } from "react";
 import Navbar from "@/components/Navbar";
 import HeroSection from "@/components/HeroSection";
 import MetricsSection from "@/components/MetricsSection";
-import ServicesSection from "@/components/ServicesSection";
-import AboutSection from "@/components/AboutSection";
-import ProjectsSection from "@/components/ProjectsSection";
-import AchievementsSection from "@/components/AchievementsSection";
-import GallerySection from "@/components/GallerySection";
-import ContactSection from "@/components/ContactSection";
+
+// Lazy load below-the-fold sections for faster initial load
+const ServicesSection = lazy(() => import("@/components/ServicesSection"));
+const AboutSection = lazy(() => import("@/components/AboutSection"));
+const ProjectsSection = lazy(() => import("@/components/ProjectsSection"));
+const AchievementsSection = lazy(() => import("@/components/AchievementsSection"));
+const GallerySection = lazy(() => import("@/components/GallerySection"));
+const ContactSection = lazy(() => import("@/components/ContactSection"));
+
+const SectionFallback = () => (
+  <div className="section-padding flex items-center justify-center min-h-[200px]">
+    <div className="w-6 h-6 border-2 border-foreground/20 border-t-foreground rounded-full animate-spin" />
+  </div>
+);
 
 const Index = () => {
   return (
@@ -14,12 +23,24 @@ const Index = () => {
       <Navbar />
       <HeroSection />
       <MetricsSection />
-      <ServicesSection />
-      <AboutSection />
-      <ProjectsSection />
-      <AchievementsSection />
-      <GallerySection />
-      <ContactSection />
+      <Suspense fallback={<SectionFallback />}>
+        <ServicesSection />
+      </Suspense>
+      <Suspense fallback={<SectionFallback />}>
+        <AboutSection />
+      </Suspense>
+      <Suspense fallback={<SectionFallback />}>
+        <ProjectsSection />
+      </Suspense>
+      <Suspense fallback={<SectionFallback />}>
+        <AchievementsSection />
+      </Suspense>
+      <Suspense fallback={<SectionFallback />}>
+        <GallerySection />
+      </Suspense>
+      <Suspense fallback={<SectionFallback />}>
+        <ContactSection />
+      </Suspense>
     </div>
   );
 };

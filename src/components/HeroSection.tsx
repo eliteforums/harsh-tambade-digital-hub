@@ -32,6 +32,9 @@ const HeroSection = () => {
             <img
               src={harshImg}
               alt="Harsh Tambade - IT & Business Consultant"
+              width={340}
+              height={453}
+              fetchPriority="high"
               className="w-full h-full object-cover object-top"
             />
           </div>

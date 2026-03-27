@@ -16,6 +16,10 @@ const AboutSection = () => {
             <img
               src={harshSecondary}
               alt="Harsh Tambade"
+              loading="lazy"
+              decoding="async"
+              width={600}
+              height={750}
               className="w-full h-full object-cover"
             />
           </div>
