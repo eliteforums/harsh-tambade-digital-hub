@@ -16,7 +16,6 @@ const images = [
   { src: gallerySpeaking, alt: "Speaking at College Seminar", span: "col-span-1 row-span-1" },
   { src: galleryTraining, alt: "Training 1500+ Students", span: "col-span-2 row-span-1" },
   { src: galleryWinner, alt: "Code-O-Fiesta Winner", span: "col-span-1 row-span-1" },
-  { src: galleryJudging, alt: "Hackathon Judge Panel", span: "col-span-1 row-span-1" },
   { src: galleryPanel, alt: "Panel Discussion", span: "col-span-1 row-span-1" },
 ];
 
