@@ -1,6 +1,8 @@
 import { useState, useRef, useEffect, useCallback } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { MessageCircle, X, Send, Bot } from "lucide-react";
+import { X, Send } from "lucide-react";
+
+const ALPHA_ICON = "/assets/alpha-bot-icon.png";
 
 interface Message {
   role: "user" | "assistant";
@@ -219,10 +221,10 @@ const AlphaBot = () => {
             exit={{ scale: 0, opacity: 0 }}
             transition={{ type: "spring", stiffness: 260, damping: 20 }}
             onClick={() => setIsOpen(true)}
-            className="fixed bottom-6 right-6 z-[9999] w-14 h-14 rounded-full bg-accent-brand text-accent-brand-foreground shadow-lg hover:shadow-xl hover:scale-105 transition-all duration-200 flex items-center justify-center"
+            className="fixed bottom-6 right-6 z-[9999] w-14 h-14 rounded-full bg-accent-brand text-accent-brand-foreground shadow-lg hover:shadow-xl hover:scale-105 transition-all duration-200 flex items-center justify-center overflow-hidden"
             aria-label="Open Alpha chatbot"
           >
-            <Bot size={24} />
+            <img src={ALPHA_ICON} alt="Alpha" className="w-10 h-10 rounded-full object-cover" />
           </motion.button>
         )}
       </AnimatePresence>
@@ -240,8 +242,8 @@ const AlphaBot = () => {
             {/* Header */}
             <div className="flex items-center justify-between px-5 py-4 border-b border-border bg-secondary/30">
               <div className="flex items-center gap-3">
-                <div className="w-9 h-9 rounded-full bg-accent-brand flex items-center justify-center">
-                  <Bot size={18} className="text-accent-brand-foreground" />
+                <div className="w-9 h-9 rounded-full overflow-hidden">
+                  <img src={ALPHA_ICON} alt="Alpha" className="w-full h-full object-cover" />
                 </div>
                 <div>
                   <p className="text-sm font-semibold text-foreground leading-tight">
