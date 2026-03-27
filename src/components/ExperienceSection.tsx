@@ -1,11 +1,13 @@
-import { motion } from "framer-motion";
+import { useState } from "react";
+import { motion, AnimatePresence } from "framer-motion";
+import { ChevronDown } from "lucide-react";
 
 interface ExperienceRole {
   title: string;
   type?: string;
   duration: string;
   period: string;
-  skills?: string;
+  skills?: string[];
 }
 
 interface ExperienceItem {
@@ -14,7 +16,7 @@ interface ExperienceItem {
   location: string;
   roles: ExperienceRole[];
   description?: string[];
-  topSkills?: string;
+  topSkills?: string[];
 }
 
 const experiences: ExperienceItem[] = [
@@ -35,7 +37,50 @@ const experiences: ExperienceItem[] = [
       "Led a team in developing 25+ client web solutions, increasing client satisfaction by 95%.",
       "Built a dynamic online community to foster collaboration and continuous learning.",
     ],
-    topSkills: "Community Engagement, Business Operations and +40 skills",
+    topSkills: [
+      "Community Engagement",
+      "Business Operations",
+      "Team Leadership",
+      "Strategic Planning",
+      "Project Management",
+      "Client Relations",
+      "Web Development",
+      "React.js",
+      "Node.js",
+      "JavaScript",
+      "TypeScript",
+      "Python",
+      "HTML5",
+      "CSS3",
+      "Tailwind CSS",
+      "MongoDB",
+      "PostgreSQL",
+      "MySQL",
+      "Firebase",
+      "AWS",
+      "Docker",
+      "Git",
+      "CI/CD",
+      "Agile Methodologies",
+      "Scrum",
+      "Product Management",
+      "UI/UX Design",
+      "Figma",
+      "Digital Marketing",
+      "SEO",
+      "Content Strategy",
+      "Public Speaking",
+      "Mentoring",
+      "Curriculum Development",
+      "Data Analysis",
+      "Machine Learning",
+      "REST APIs",
+      "GraphQL",
+      "Next.js",
+      "Express.js",
+      "Startup Development",
+      "Business Development",
+    ],
   },
   {
     company: "DevOps Club Apsit",
@@ -46,7 +91,19 @@ const experiences: ExperienceItem[] = [
         title: "Mentor",
         duration: "3 mos",
         period: "Jun 2025 – Aug 2025",
-        skills: "Staff Mentoring, Mentoring, +9 skills",
+        skills: [
+          "Staff Mentoring",
+          "Mentoring",
+          "Technical Training",
+          "DevOps",
+          "Linux",
+          "Docker",
+          "Kubernetes",
+          "CI/CD Pipelines",
+          "Cloud Computing",
+          "Team Building",
+          "Workshop Facilitation",
+        ],
       },
       {
         title: "Publicity Manager",
@@ -72,7 +129,29 @@ const experiences: ExperienceItem[] = [
       "Improved machine learning model accuracy by 20% through advanced data analysis.",
       "Managed project timelines and coordinated between development and business teams.",
     ],
-    topSkills: "Community Engagement, Business Operations and +19 skills",
+    topSkills: [
+      "Community Engagement",
+      "Business Operations",
+      "Project Management",
+      "AI/ML Development",
+      "Data Analysis",
+      "Python",
+      "TensorFlow",
+      "Scikit-learn",
+      "Pandas",
+      "NumPy",
+      "Cross-functional Leadership",
+      "Agile Methodologies",
+      "Stakeholder Communication",
+      "Risk Management",
+      "Technical Documentation",
+      "Team Coordination",
+      "Sprint Planning",
+      "Quality Assurance",
+      "Performance Optimization",
+      "Model Deployment",
+      "Data Visualization",
+    ],
   },
   {
     company: "Empiric Media",
@@ -89,7 +168,32 @@ const experiences: ExperienceItem[] = [
       "Developed and maintained responsive web applications for 5+ clients.",
       "Collaborated with design and backend teams to launch new features on schedule.",
     ],
-    topSkills: "JavaScript, React.js and +22 skills",
+    topSkills: [
+      "JavaScript",
+      "React.js",
+      "Node.js",
+      "Express.js",
+      "HTML5",
+      "CSS3",
+      "MongoDB",
+      "REST APIs",
+      "Responsive Design",
+      "Git",
+      "Webpack",
+      "Bootstrap",
+      "jQuery",
+      "SASS",
+      "Firebase",
+      "Heroku",
+      "Agile Development",
+      "Code Reviews",
+      "Cross-browser Compatibility",
+      "Performance Optimization",
+      "UI/UX Collaboration",
+      "Debugging",
+      "Unit Testing",
+      "API Integration",
+    ],
   },
   {
     company: "J&B Technologies, Ltd.",
@@ -100,7 +204,7 @@ const experiences: ExperienceItem[] = [
         type: "Internship",
         duration: "3 mos",
         period: "Jun 2022 – Aug 2022",
-        skills: "Strategy, Spoken English and +2 skills",
+        skills: ["Strategy", "Spoken English", "Python", "Web Scraping"],
       },
     ],
   },
@@ -113,11 +217,62 @@ const experiences: ExperienceItem[] = [
         type: "Internship",
         duration: "3 mos",
         period: "Jan 2022 – Mar 2022",
-        skills: "Strategy, Spoken English and +2 skills",
+        skills: ["Strategy", "Spoken English", "HTML", "CSS"],
       },
     ],
   },
 ];
+
+const INITIAL_SKILL_COUNT = 3;
+
+const SkillTags = ({ skills }: { skills: string[] }) => {
+  const [expanded, setExpanded] = useState(false);
+  const hasMore = skills.length > INITIAL_SKILL_COUNT;
+  const visibleSkills = expanded ? skills : skills.slice(0, INITIAL_SKILL_COUNT);
+  const hiddenCount = skills.length - INITIAL_SKILL_COUNT;
+
+  return (
+    <div className="mt-3">
+      <p className="text-xs text-muted-foreground font-medium mb-2">Top Skills:</p>
+      <div className="flex flex-wrap gap-2">
+        <AnimatePresence mode="popLayout">
+          {visibleSkills.map((skill) => (
+            <motion.span
+              key={skill}
+              layout
+              initial={{ opacity: 0, scale: 0.85 }}
+              animate={{ opacity: 1, scale: 1 }}
+              exit={{ opacity: 0, scale: 0.85 }}
+              transition={{ duration: 0.2 }}
+              className="inline-block text-xs px-3 py-1.5 rounded-full border border-border bg-secondary/40 text-muted-foreground hover:bg-secondary/70 hover:text-foreground transition-colors duration-200"
+            >
+              {skill}
+            </motion.span>
+          ))}
+        </AnimatePresence>
+
+        {hasMore && (
+          <button
+            onClick={() => setExpanded(!expanded)}
+            className="inline-flex items-center gap-1 text-xs px-3 py-1.5 rounded-full border border-border bg-foreground/5 text-foreground hover:bg-foreground/10 transition-colors duration-200 cursor-pointer font-medium"
+          >
+            {expanded ? (
+              <>
+                Show Less
+                <ChevronDown size={12} className="rotate-180 transition-transform duration-200" />
+              </>
+            ) : (
+              <>
+                +{hiddenCount} more
+                <ChevronDown size={12} className="transition-transform duration-200" />
+              </>
+            )}
+          </button>
+        )}
+      </div>
+    </div>
+  );
+};
 
 const containerVariants = {
   hidden: { opacity: 0 },
@@ -203,11 +358,8 @@ const ExperienceSection = () => {
                     <p className="text-xs text-muted-foreground mt-1">
                       {role.period} · {role.duration}
                     </p>
-                    {role.skills && (
-                      <p className="text-xs text-muted-foreground/70 mt-2">
-                        <span className="text-muted-foreground font-medium">Skills:</span>{" "}
-                        {role.skills}
-                      </p>
+                    {role.skills && role.skills.length > 0 && (
+                      <SkillTags skills={role.skills} />
                     )}
                   </div>
                 ))}
@@ -226,11 +378,8 @@ const ExperienceSection = () => {
                   </ul>
                 )}
 
-                {exp.topSkills && (
-                  <p className="text-xs text-muted-foreground/70 mt-3">
-                    <span className="text-muted-foreground font-medium">Top Skills:</span>{" "}
-                    {exp.topSkills}
-                  </p>
+                {exp.topSkills && exp.topSkills.length > 0 && (
+                  <SkillTags skills={exp.topSkills} />
                 )}
               </div>
             </div>
