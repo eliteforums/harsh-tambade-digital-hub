@@ -15,10 +15,10 @@ const ContactSection = () => {
           <p className="text-xs uppercase tracking-[0.3em] text-muted-foreground mb-6">Get in Touch</p>
 
           {/* Side-by-side layout: Heading left, Calendar right */}
-          <div className="flex flex-col lg:flex-row gap-8 lg:gap-12 items-start">
+          <div className="flex flex-col lg:flex-row gap-10 lg:gap-12 items-stretch">
             {/* Left: Heading + Buttons */}
-            <div className="w-full lg:w-1/2 flex flex-col">
-              <h2 className="heading-xl text-foreground mb-8">
+            <div className="w-full lg:w-1/2 flex flex-col justify-center">
+              <h2 className="font-heading text-5xl md:text-6xl lg:text-7xl leading-none tracking-tight text-foreground mb-8">
                 LET'S BUILD<br />SOMETHING<br />IMPACTFUL
               </h2>
               <div className="flex flex-col sm:flex-row gap-4">
@@ -40,16 +40,17 @@ const ContactSection = () => {
             </div>
 
             {/* Right: Google Calendar Appointment Scheduling */}
-            <div className="w-full lg:w-1/2">
+            <div className="w-full lg:w-1/2 flex flex-col">
               <p className="text-xs uppercase tracking-[0.3em] text-muted-foreground mb-4">Schedule a Meeting</p>
-              <div className="w-full rounded-lg overflow-hidden border border-border">
+              <div className="w-full flex-1 rounded-lg overflow-hidden border border-border min-h-[500px]">
                 <iframe
                   src="https://calendar.google.com/calendar/appointments/schedules/AcZssZ0AX_L2bFXqdvEqYfczKheIWDgu7w71VrweGPr5nS50060BvUOPkRb3e2LlGJ4V-RA7KuVKabsn?gv=true"
                   style={{ border: 0 }}
                   width="100%"
-                  height="600"
+                  height="100%"
                   frameBorder="0"
                   title="Google Calendar Appointment Scheduling"
+                  className="min-h-[500px]"
                 />
               </div>
             </div>
