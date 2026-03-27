@@ -13,38 +13,45 @@ const ContactSection = () => {
           transition={{ duration: 0.8, ease: [0.25, 0.1, 0.25, 1] }}
         >
           <p className="text-xs uppercase tracking-[0.3em] text-muted-foreground mb-6">Get in Touch</p>
-          <h2 className="heading-xl text-foreground mb-8">
-            LET'S BUILD<br />SOMETHING<br />IMPACTFUL
-          </h2>
-          <div className="flex flex-col sm:flex-row gap-4 mt-10">
-            <a
-              href="https://calendar.app.google/fBXqj6iBaGjYAJeLA"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="bg-accent-brand text-accent-brand-foreground px-8 py-4 text-xs uppercase tracking-wider font-semibold hover:opacity-90 transition-opacity inline-flex items-center gap-2"
-            >
-              Book a Consultation <ArrowRight size={14} />
-            </a>
-            <a
-              href="mailto:harsh.tambade@eliteforums.in"
-              className="border border-foreground text-foreground px-8 py-4 text-xs uppercase tracking-wider font-semibold hover:bg-foreground hover:text-background transition-colors text-center"
-            >
-              Send an Email
-            </a>
-          </div>
 
-          {/* Google Calendar Appointment Scheduling */}
-          <div className="mt-12 w-full">
-            <p className="text-xs uppercase tracking-[0.3em] text-muted-foreground mb-4">Schedule a Meeting</p>
-            <div className="w-full rounded-lg overflow-hidden border border-border">
-              <iframe
-                src="https://calendar.google.com/calendar/appointments/schedules/AcZssZ0AX_L2bFXqdvEqYfczKheIWDgu7w71VrweGPr5nS50060BvUOPkRb3e2LlGJ4V-RA7KuVKabsn?gv=true"
-                style={{ border: 0 }}
-                width="100%"
-                height="600"
-                frameBorder="0"
-                title="Google Calendar Appointment Scheduling"
-              />
+          {/* Side-by-side layout: Heading left, Calendar right */}
+          <div className="flex flex-col lg:flex-row gap-8 lg:gap-12 items-start">
+            {/* Left: Heading + Buttons */}
+            <div className="w-full lg:w-1/2 flex flex-col">
+              <h2 className="heading-xl text-foreground mb-8">
+                LET'S BUILD<br />SOMETHING<br />IMPACTFUL
+              </h2>
+              <div className="flex flex-col sm:flex-row gap-4">
+                <a
+                  href="https://calendar.app.google/fBXqj6iBaGjYAJeLA"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="bg-accent-brand text-accent-brand-foreground px-8 py-4 text-xs uppercase tracking-wider font-semibold hover:opacity-90 transition-opacity inline-flex items-center gap-2"
+                >
+                  Book a Consultation <ArrowRight size={14} />
+                </a>
+                <a
+                  href="mailto:harsh.tambade@eliteforums.in"
+                  className="border border-foreground text-foreground px-8 py-4 text-xs uppercase tracking-wider font-semibold hover:bg-foreground hover:text-background transition-colors text-center"
+                >
+                  Send an Email
+                </a>
+              </div>
+            </div>
+
+            {/* Right: Google Calendar Appointment Scheduling */}
+            <div className="w-full lg:w-1/2">
+              <p className="text-xs uppercase tracking-[0.3em] text-muted-foreground mb-4">Schedule a Meeting</p>
+              <div className="w-full rounded-lg overflow-hidden border border-border">
+                <iframe
+                  src="https://calendar.google.com/calendar/appointments/schedules/AcZssZ0AX_L2bFXqdvEqYfczKheIWDgu7w71VrweGPr5nS50060BvUOPkRb3e2LlGJ4V-RA7KuVKabsn?gv=true"
+                  style={{ border: 0 }}
+                  width="100%"
+                  height="600"
+                  frameBorder="0"
+                  title="Google Calendar Appointment Scheduling"
+                />
+              </div>
             </div>
           </div>
         </motion.div>
