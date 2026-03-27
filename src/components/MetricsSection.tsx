@@ -1,7 +1,7 @@
 import { motion } from "framer-motion";
 
 const metrics = [
-  { value: "₹20L+", label: "Revenue Generated" },
+  { value: "₹25L+", label: "Revenue Generated" },
   { value: "25+", label: "Clients Served" },
   { value: "1500+", label: "Professionals Trained" },
   { value: "900+", label: "Community Members" },
