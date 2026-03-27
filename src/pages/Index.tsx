@@ -2,6 +2,7 @@ import { lazy, Suspense } from "react";
 import Navbar from "@/components/Navbar";
 import HeroSection from "@/components/HeroSection";
 import MetricsSection from "@/components/MetricsSection";
+import AlphaBot from "@/components/AlphaBot";
 
 // Lazy load below-the-fold sections for faster initial load
 const ServicesSection = lazy(() => import("@/components/ServicesSection"));
@@ -45,6 +46,7 @@ const Index = () => {
       <Suspense fallback={<SectionFallback />}>
         <ContactSection />
       </Suspense>
+      <AlphaBot />
     </div>
   );
 };
