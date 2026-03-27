@@ -6,6 +6,7 @@ import MetricsSection from "@/components/MetricsSection";
 // Lazy load below-the-fold sections for faster initial load
 const ServicesSection = lazy(() => import("@/components/ServicesSection"));
 const AboutSection = lazy(() => import("@/components/AboutSection"));
+const ExperienceSection = lazy(() => import("@/components/ExperienceSection"));
 const ProjectsSection = lazy(() => import("@/components/ProjectsSection"));
 const AchievementsSection = lazy(() => import("@/components/AchievementsSection"));
 const GallerySection = lazy(() => import("@/components/GallerySection"));
@@ -28,6 +29,9 @@ const Index = () => {
       </Suspense>
       <Suspense fallback={<SectionFallback />}>
         <AboutSection />
+      </Suspense>
+      <Suspense fallback={<SectionFallback />}>
+        <ExperienceSection />
       </Suspense>
       <Suspense fallback={<SectionFallback />}>
         <ProjectsSection />
