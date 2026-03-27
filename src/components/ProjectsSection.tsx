@@ -12,9 +12,9 @@ const projects = [
   {
     num: "02",
     title: "ETERNIA",
-    subtitle: "FULL-SCALE DIGITAL PLATFORM",
+    subtitle: "ANONYMOUS COUNSELLING & PEER SUPPORT",
     link: "https://eternia.eliteforums.in",
-    description: "Full-scale digital platform with focus on scalable architecture and enhanced user engagement.",
+    description: "Anonymous counselling, peer support, emotional tools & sound therapy — institution-controlled and DPDP-compliant.",
   },
   {
     num: "03",
@@ -27,7 +27,7 @@ const projects = [
     num: "04",
     title: "CLASSROOM PLATFORM",
     subtitle: "EDTECH LEARNING SYSTEM",
-    link: null,
+    link: "https://classroom.eliteforums.in",
     description: "EdTech system for structured learning, used for training 1500+ students with integrated content delivery & tracking.",
   },
 ];
