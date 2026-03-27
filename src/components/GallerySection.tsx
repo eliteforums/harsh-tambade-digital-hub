@@ -46,20 +46,29 @@ const GallerySection = () => {
         </motion.div>
       </div>
 
-      {/* Auto-scrolling marquee */}
-      <div className="relative w-full">
-        <motion.div
-          className="flex gap-4"
-          animate={{ x: ["0%", "-50%"] }}
-          transition={{
-            x: {
-              repeat: Infinity,
-              repeatType: "loop",
-              duration: 40,
-              ease: "linear",
-            },
-          }}
-        >
+      {/* Auto-scrolling marquee with manual scroll support */}
+      <style>{`
+        @keyframes marquee-scroll {
+          0% { transform: translateX(0); }
+          100% { transform: translateX(-50%); }
+        }
+        .gallery-track {
+          animation: marquee-scroll 40s linear infinite;
+        }
+        .gallery-container:hover .gallery-track,
+        .gallery-container:active .gallery-track {
+          animation-play-state: paused;
+        }
+      `}</style>
+      <div
+        className="gallery-container relative w-full overflow-x-auto scrollbar-hide cursor-grab active:cursor-grabbing"
+        style={{
+          scrollbarWidth: "none",
+          msOverflowStyle: "none",
+          WebkitOverflowScrolling: "touch",
+        }}
+      >
+        <div className="gallery-track flex gap-4 w-max">
           {duplicated.map((image, i) => (
             <div
               key={i}
@@ -72,11 +81,11 @@ const GallerySection = () => {
                 decoding="async"
                 width={400}
                 height={280}
-                className="w-full h-full object-cover hover:scale-105 transition-transform duration-700"
+                className="w-full h-full object-cover hover:scale-105 transition-transform duration-700 pointer-events-none"
               />
             </div>
           ))}
-        </motion.div>
+        </div>
       </div>
     </section>
   );
