@@ -48,11 +48,17 @@ const HeroSection = () => {
           className="flex flex-col justify-end gap-6 pb-2"
         >
           <div>
-            <p className="font-heading text-xl md:text-2xl text-foreground mb-2">
+            <p className="font-heading text-xl md:text-2xl text-foreground mb-3">
               HARSH TAMBADE
             </p>
-            <p className="body-sm text-muted-foreground max-w-xs">
+            <p className="body-sm text-muted-foreground max-w-xs mb-3">
               IT & Business Consultant helping companies leverage AI, data, and digital transformation to scale efficiently.
+            </p>
+            <p className="body-sm text-muted-foreground max-w-xs mb-3">
+              Founder of Elite Forums — specializing in SaaS development, AI-powered automation, and strategic tech consulting for startups and enterprises.
+            </p>
+            <p className="body-sm text-muted-foreground max-w-xs">
+              Turning complex challenges into scalable solutions through data engineering, cloud architecture, and business intelligence.
             </p>
           </div>
           <div className="flex flex-wrap gap-3">
